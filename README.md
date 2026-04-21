@@ -8,7 +8,7 @@ qwen3-1.7B: https://huggingface.co/Qwen/Qwen3-1.7B
 gemma2-2b-it: https://huggingface.co/google/gemma-2-2b-it
 
 
-# CSE4078 S2026 - Group 9 Progress Presentation
+
 
 ## Project Objective
 - Evaluate Large Language Models on Turkish medical benchmarks

@@ -53,8 +53,8 @@ def main():
         
     combined_df = pd.concat(data, ignore_index=True)
     
-    # Calculate median PPL for barplot
-    median_df = combined_df.groupby('Model')['perplexity'].median().reset_index()
+    # Calculate average PPL for barplot
+    avg_df = combined_df.groupby('Model')['perplexity'].mean().reset_index()
     
     # Set seaborn style
     sns.set_theme(style="whitegrid")
@@ -62,10 +62,10 @@ def main():
     # Create a figure with two subplots
     fig, axes = plt.subplots(1, 2, figsize=(12, 5))
     
-    # Plot 1: Bar chart of median perplexity
-    sns.barplot(data=median_df, x='Model', y='perplexity', ax=axes[0], hue='Model', palette="Blues_d", legend=False)
-    axes[0].set_title('Median Perplexity by Model', fontsize=14, fontweight='bold')
-    axes[0].set_ylabel('Median Perplexity', fontsize=12, fontweight='bold')
+    # Plot 1: Bar chart of average perplexity
+    sns.barplot(data=avg_df, x='Model', y='perplexity', ax=axes[0], hue='Model', palette="Blues_d", legend=False)
+    axes[0].set_title('Average Perplexity by Model', fontsize=14, fontweight='bold')
+    axes[0].set_ylabel('Average Perplexity', fontsize=12, fontweight='bold')
     axes[0].set_xlabel('Model', fontsize=12, fontweight='bold')
     
     # Annotate the bars
